@@ -40,26 +40,7 @@ function selected($value, $target)
 
     <h1 class="text-2xl font-bold text-center p-6">売上管理</h1>
 
-    <div class="p-3 text-center">
-        <form action="" method="get">
-            <div class="flex justify-center items-center space-x-2">
-                <select name="year" class="mr-2 p-2 border">
-                    <option value="">年</option>
-                    <?php foreach ($years as $year) : ?>
-                        <option value="<?= $year ?>" <?= selected($year, $current_year) ?>><?= $year ?></option>
-                    <?php endforeach ?>
-                </select>
-                <select name="month" class="mr-2 p-2 border">
-                    <option value="">月</option>
-                    <?php foreach ($months as $month) : ?>
-                        <option value="<?= $month ?>" <?= selected($month, $current_month) ?>><?= $month ?></option>
-                    <?php endforeach ?>
-                </select>
-                <button class="bg-sky-500 text-white px-3 py-2 rounded">検索</button>
-                <a class="border px-3 py-2 rounded" href="sales/">クリア</a>
-            </div>
-        </form>
-    </div>
+    <?php include COMPONENT_DIR . "SalesDateSelect.php"; ?>
 
     <h3 class="text-xl text-center p-3">
         <label for="">総売上</label>

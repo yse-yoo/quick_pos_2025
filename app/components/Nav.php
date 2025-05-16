@@ -8,6 +8,9 @@
                 <li>
                     <a href="sales/" class="text-lg">売上管理</a>
                 </li>
+                <li>
+                    <a href="sales/month.php" class="text-lg">売上管理（月別）</a>
+                </li>
             </ul>
         </div>
     </nav>

@@ -75,6 +75,18 @@ class SalesRepository
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':id' => $id]);
     }
+
+    public function getMonthlySalesByYear($year)
+    {
+        $sql = "SELECT MONTH(created_at) AS month, SUM(price) AS total
+            FROM sales
+            WHERE YEAR(created_at) = :year
+            GROUP BY MONTH(created_at)
+            ORDER BY month";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':year' => $year]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 class SalesService
@@ -109,5 +121,10 @@ class SalesService
     public function getTotalSales($sales)
     {
         return array_sum(array_column($sales, 'price'));
+    }
+
+    public function getMonthlySalesByYear($year)
+    {
+        return $this->salesRepository->getMonthlySalesByYear($year);
     }
 }
