@@ -1,4 +1,7 @@
 function loadQRCode() {
+    const modal = document.getElementById("qr-modal");
+    modal.classList.remove("hidden");
+
     const resultElement = document.getElementById("qr-result");
     if (!window.Html5Qrcode) {
         resultElement.textContent = "QR読み取りライブラリが読み込まれていません。";
@@ -36,10 +39,3 @@ function loadQRCode() {
         resultElement.textContent = "カメラアクセスに失敗しました: " + err;
     });
 }
-
-closeBtn.addEventListener("click", function () {
-    modal.classList.add("hidden");
-    if (html5QrCode) {
-        html5QrCode.stop().catch(err => console.error("停止失敗", err));
-    }
-});
