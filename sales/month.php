@@ -36,13 +36,19 @@ function selected($value, $target)
 
     <?php include COMPONENT_DIR . "SalesDateSelect.php"; ?>
 
+    <div class="text-center p-3">
+        <label for="">総売上</label>
+        <span id="total-sales" class="text-3xl font-bold"><?= number_format(array_sum($monthly_data)) ?></span>
+        <span class="text-md">円</span>
+    </div>
+
     <canvas id="salesChart" class="w-full p-6"></canvas>
 
     <script>
         const monthlySales = <?= json_encode(array_values($monthly_data)) ?>;
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/sales.js" defer></script>
+    <script src="js/sales_month.js" defer></script>
 </body>
 
 </html>
