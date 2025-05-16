@@ -16,6 +16,8 @@ if (isset($_SESSION['message'])) {
 <body>
     <?php include COMPONENT_DIR . "Nav.php"; ?>
 
+    <h1>こんにちは</h1>
+    
     <main class="flex">
         <?php include COMPONENT_DIR . 'Register.php' ?>
 
