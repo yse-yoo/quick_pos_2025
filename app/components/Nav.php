@@ -11,6 +11,9 @@
                 <li>
                     <a href="sales/month.php" class="text-lg">売上管理（月別）</a>
                 </li>
+                <li>
+                    <a href="products/" class="text-lg">商品管理</a>
+                </li>
             </ul>
         </div>
     </nav>
