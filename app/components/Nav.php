@@ -1,6 +1,6 @@
     <nav>
         <div class="flex items-center justify-left p-4 bg-sky-600 text-white">
-            <h1 class="text-2xl font-bold">YSEレジ</h1>
+            <h1 class="text-2xl font-bold"><?= SITE_TITLE ?></h1>
             <ul class="flex ml-5 space-x-4">
                 <li>
                     <a href="./" class="text-lg">レジ</a>
