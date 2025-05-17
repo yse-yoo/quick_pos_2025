@@ -12,10 +12,12 @@ const COMPONENT_DIR = APP_DIR . "components/";
 // BASE_URL を定義（常にルートからの相対パス）
 define('BASE_URL', getBaseUrl());
 
-// Database.php の読み込み
+// ライブラリの読み込み
 require_once LIB_DIR . "Database.php";
-// Sales.php の読み込み
+
+// モデルの読み込み
 require_once MODEL_DIR . "Sales.php";
+require_once MODEL_DIR . "Product.php";
 
 // セッションスタート
 session_start();

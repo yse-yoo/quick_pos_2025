@@ -16,18 +16,20 @@ if (isset($_SESSION['message'])) {
 <body>
     <?php include COMPONENT_DIR . "Nav.php"; ?>
 
-    <?php include COMPONENT_DIR . 'QR.php' ?>
+    <main class="mt-10 flex">
+        <div class="w-1/2">
+            <?php include COMPONENT_DIR . 'Register.php' ?>
+        </div>
+        <div class="w-1/2">
+            <?php include COMPONENT_DIR . 'QR.php' ?>
 
-    <main class="flex">
-        <?php include COMPONENT_DIR . 'Register.php' ?>
-
-        <?php include COMPONENT_DIR . 'SalesRecord.php' ?>
+            <?php include COMPONENT_DIR . 'SalesRecord.php' ?>
+        </div>
     </main>
 
-    <script src="js/app.js"></script>
-
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-    <script src="js/qr_reader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/qr_reader.js" defer></script>
 </body>
 
 

@@ -3,6 +3,7 @@ const totalDisplay = document.getElementById("total-display");
 const calculateDisplay = document.getElementById("calculate-display");
 const redordsDisplay = document.getElementById("records-display");
 const listContainer = document.getElementById("item-list");
+let scanned = false; // 連続読み込み防止
 
 let current = "";
 let total = 0;
@@ -93,6 +94,51 @@ function addItem() {
 
     // 商品リストを更新
     updateRecordsDisplay();
+}
+
+/**
+ * API経由でアイテムを追加
+ * @returns 
+ */
+async function addItemByCode(code) {
+    try {
+        const uri = `api/products/find_by_code.php?code=${encodeURIComponent(code)}`;
+        const response = await fetch(uri);
+        if (!response.ok) {
+            output.textContent = "通信エラー";
+            return;
+        }
+
+        const product = await response.json();
+        if (!product || !product.id) {
+            output.textContent = "商品が見つかりません";
+            return;
+        }
+
+        // 既に同じコードの商品が存在するかチェック
+        const existingItem = itemList.find(item => item.code === product.code);
+        if (existingItem) {
+            // 既存商品
+            if (confirm("この商品は既にカートに入っています。数量を追加しますか？")) {
+                existingItem.quantity++;
+            }
+        } else {
+            // 新規商品
+            itemList.push({
+                id: product.id,
+                code: product.code,
+                name: product.name,
+                price: product.price,
+                quantity: 1
+            });
+            output.textContent = `商品: ${product.name}`;
+        }
+
+        updateRecordsDisplay();
+    } catch (error) {
+        console.error("エラー:", error);
+        output.textContent = "商品情報の取得に失敗しました";
+    }
 }
 
 /**

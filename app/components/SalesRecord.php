@@ -1,5 +1,5 @@
-<div class="rounded p-6 shadow-md w-full max-w-md">
-    <div class="text-gray-700 mb-4 font-bold text-lg">
+<section class="px-3">
+    <div id="output" class="text-gray-700 mb-4 font-bold text-lg">
         <?= $message ?>
     </div>
 
@@ -43,4 +43,4 @@
             </div>
         </div>
     </form>
-</div>
+</section>

@@ -1,4 +1,4 @@
-<div class="rounded p-6 shadow-md w-full max-w-md">
+<section class="px-3">
     <div id="display" class="w-full text-right text-3xl mb-4 px-4 py-2 rounded bg-gray-50">
         0
     </div>
@@ -19,11 +19,10 @@
         <button class="bg-gray-100 hover:bg-gray-200 text-xl font-medium rounded aspect-square w-full" onclick="addNumber('1')" type="button">1</button>
         <button class="bg-gray-100 hover:bg-gray-200 text-xl font-medium rounded aspect-square w-full" onclick="addNumber('2')" type="button">2</button>
         <button class="bg-gray-100 hover:bg-gray-200 text-xl font-medium rounded aspect-square w-full" onclick="addNumber('3')" type="button">3</button>
-        <button id="qr-btn" onclick="loadQRCode()">QR</button>
 
         <button class="bg-gray-100 hover:bg-gray-200 text-xl font-medium rounded aspect-square w-full" onclick="addNumber('0')" type="button">0</button>
         <button class="bg-gray-100 hover:bg-gray-200 text-xl font-medium rounded aspect-square w-full" onclick="addNumber('00')" type="button">00</button>
         <button class="bg-gray-100 hover:bg-gray-200 text-xl font-medium rounded aspect-square w-full" onclick="addNumber('000')" type="button">000</button>
         <button></button>
     </div>
-</div>
+</section>
