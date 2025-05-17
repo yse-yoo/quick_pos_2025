@@ -1,4 +1,4 @@
-<section class="px-3">
+<section class="p-3 text-center">
     <div id="output" class="text-gray-700 mb-4 font-bold text-lg">
         <?= $message ?>
     </div>
